@@ -28,9 +28,9 @@ export default function RootLayout({ children }) {
             <aside className="w-20  text-white fixed right-0 top-16 h-[calc(100vh-4rem)]">
               <RightSidebar />
             </aside>
-            <aside className="w-20  text-white fixed bottom-0 top-16 h-[calc(100vh-4rem)]">
+            {/* <aside className="w-20  text-white fixed bottom-0 top-16 h-[calc(100vh-4rem)]">
               <BottomBar />
-            </aside>
+            </aside> */}
           </div>
         </ThemeProvider>
       </body>

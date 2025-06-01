@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Badge } from "../../components/ui/badge";
 import { cn } from "../../lib/utils";
@@ -55,6 +57,9 @@ const levelColor = {
   },
 };
 
+
+const Skills = () => {
+  
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
   visible: (i = 1) => ({
@@ -67,8 +72,6 @@ const fadeIn = {
     },
   }),
 };
-
-const Skills = () => {
   return (
     <section className="flex flex-col items-center justify-center min-h-screen px-4 py-16 max-w-4xl">
       <motion.div

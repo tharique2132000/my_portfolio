@@ -24,7 +24,7 @@ export default function Home() {
   };
 
   return (
-    <div className=" bg-transparent  flex px-4 py-16 flex-col items-center justify-center p-6 sm:p-12 md:p-24 relative mb-32">
+    <div className=" bg-transparent  flex px-4 py-16 flex-col items-center justify-center p-6 sm:p-12 md:p-24 relative md:mb-32">
       <motion.div
         className="flex flex-col space-y-4 text-center sm:text-left mb-20"
         initial={{ opacity: 0, y: 50 }}
@@ -32,7 +32,7 @@ export default function Home() {
         transition={{ duration: 1, ease: "easeOut", staggerChildren: 0.3 }}
       >
         <motion.div
-          className="font-extralight text-xs sm:ml-0 md:ml-10 lg:ml-20"
+          className="font-extralight text-xs sm:text-sm sm:ml-0 md:ml-10 lg:ml-20"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
@@ -41,7 +41,7 @@ export default function Home() {
         </motion.div>
 
         <motion.div
-          className="font-extrabold text-[80px] sm:text-[100px] md:text-[150px] lg:text-[200px] leading-none"
+          className="font-extrabold text-[80px] sm:text-[150px] md:text-[150px] lg:text-[200px] leading-none"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.4 }}

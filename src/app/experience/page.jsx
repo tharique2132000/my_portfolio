@@ -114,7 +114,8 @@ export default function Experience() {
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          A journey through my roles, responsibilities, and technologies I've mastered.
+          A journey through my roles, responsibilities, and technologies I've
+          mastered.
         </motion.p>
         <motion.div
           className="w-24 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto mt-6 rounded-full"
@@ -136,6 +137,9 @@ export default function Experience() {
             className="space-y-6 p-5 isolate aspect-video "
           >
             <div>
+              {index !== 0 && (
+                <div className="flex-grow h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10"></div>
+              )}
               <p className="text-sm text-muted-foreground">{item.year}</p>
               <h3 className="text-2xl font-bold text-primary">{item.title}</h3>
               <p className="text-blue-600 font-medium hover:underline">
