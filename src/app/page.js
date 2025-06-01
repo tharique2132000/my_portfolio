@@ -38,15 +38,12 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="mb-10">
+    <div className="flex flex-col items-center justify-center min-h-screen px-4 pt-16 ">
       <div id="home">
         <Pilot />
       </div>
       <div id="about">
         <About />
-      </div>
-      <div id="education">
-        <Education />
       </div>
       <div id="experience">
         <Experience />
@@ -54,6 +51,10 @@ export default function Home() {
       <div id="skills">
         <Skill />
       </div>
+      {/* <div id="education">
+        <Education />
+      </div> */}
+
       <div id="contact">
         <Contact />
       </div>

@@ -7,7 +7,8 @@ import { InteractiveHoverButton } from "../../components/magicui/interactive-hov
 
 export default function About() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const headingRef = useRef(null);
+  const isInView = useInView(headingRef, { once: true, margin: "-100px" });
 
   const [isVisible, setIsVisible] = useState(true);
   useEffect(() => {
@@ -21,8 +22,8 @@ export default function About() {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/ABDUR_RAHMAN_24.pdf";
-    link.download = "My_Resume.pdf";
+    link.href = "/abdur_rahman.pdf";
+    link.download = "abdur_rahman.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -30,14 +31,45 @@ export default function About() {
 
   const handleScrollDown = () => {
     window.scrollTo({
-      top: window.innerHeight, // Scroll down to the next section
+      top: window.innerHeight,
       behavior: "smooth",
     });
   };
 
   return (
-    <div className="flex flex-col items-center justify-start  px-6 gap-16">
+    <div className="bg-transparent flex flex-col items-center justify-center min-h-screen px-4 py-16">
       {/* ABOUT ME */}
+      <motion.div
+        ref={headingRef}
+        className="w-full max-w-4xl mx-auto text-center mb-16"
+        initial={{ opacity: 0, y: -20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <motion.h1
+          className="text-4xl md:text-5xl font-bold mb-4 text-foreground"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          Who Am I ?
+        </motion.h1>
+        <motion.p
+          className="text-lg text-muted-foreground max-w-2xl mx-auto"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          A brief intro about myself
+        </motion.p>
+        <motion.div
+          className="w-24 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto mt-6 rounded-full"
+          initial={{ width: 0 }}
+          animate={isInView ? { width: 96 } : {}}
+          transition={{ duration: 0.8, delay: 0.8 }}
+        ></motion.div>
+      </motion.div>
+
       <motion.div
         ref={ref}
         className="flex flex-col space-y-6 text-center md:text-start w-full max-w-4xl"
@@ -45,20 +77,11 @@ export default function About() {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1, ease: "easeOut", staggerChildren: 0.3 }}
       >
-        <motion.h2
-          className="text-4xl md:text-5xl font-bold mb-10"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 1, delay: 0.4 }}
-        >
-          WHO AM I?
-        </motion.h2>
-
         <motion.p
-          className="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
+          className="text-center md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 1, delay: 0.8 }}
+          transition={{ duration: 1, delay: 1.0 }}
         >
           I'm a code-slinging Full-Stack Developer from India who speaks fluent
           React, JavaScript, and Java (and occasionally, human). I build sleek
@@ -69,11 +92,16 @@ export default function About() {
           ninja and future-proof apps like a digital time traveler. 🚀💻😎
         </motion.p>
 
-        <div className="flex justify-center md:justify-start">
+        <motion.div
+          className="flex justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 1.2 }}
+        >
           <InteractiveHoverButton onClick={handleDownload}>
             Download CV
           </InteractiveHoverButton>
-        </div>
+        </motion.div>
       </motion.div>
 
       {/* Scroll Down Indicator */}

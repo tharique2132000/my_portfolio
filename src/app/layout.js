@@ -14,14 +14,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="flex flex-col min-h-screen outer-container">
+      {/* <body className="flex flex-col min-h-screen outer-container"> */}
+      <body class="bg-background dark:bg-dark-blue text-foreground">
         <ThemeProvider>
           <Header />
           <div className="flex flex-1">
-            <aside className="w-20  text-white fixed letft-0 top-16 h-[calc(100vh-4rem)]">
+            <aside className="w-20 text-white fixed letft-0 top-16 h-[calc(100vh-4rem)]">
               <LeftSidebar />
             </aside>
-            <div className="flex-1 p-8 overflow-y-auto">
+            <div className="flex-1 p-8 overflow-y-auto dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
               <Page/>
             </div>
             <aside className="w-20  text-white fixed right-0 top-16 h-[calc(100vh-4rem)]">
