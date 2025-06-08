@@ -9,11 +9,17 @@ import Page from "./page";
 export const metadata = {
   title: "Abdur Rahman's Portfolio",
   description: "Showcasing my work as a software engineer, specializing in React, front-end development, and modern web technologies.",
+   icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+</head>
       {/* <body className="flex flex-col min-h-screen outer-container"> */}
       <body class="bg-background dark:bg-dark-blue text-foreground">
         <ThemeProvider>

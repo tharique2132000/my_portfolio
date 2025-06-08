@@ -62,7 +62,7 @@ export default function ContactForm() {
   ];
 
   return (
-    <div ref={ref} className="flex flex-col items-center justify-center max-w-4xl">
+    <div ref={ref} className="flex flex-col items-center justify-center max-w-4xl py-20">
       <motion.div
         className="w-full max-w-6xl mx-auto text-center mb-16"
         initial={{ opacity: 0, y: -20 }}

@@ -73,7 +73,7 @@ const fadeIn = {
   }),
 };
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen px-4 py-16 max-w-4xl">
+    <section className="flex flex-col items-center justify-center min-h-screen px-4 py-20 max-w-4xl">
       <motion.div
         className="max-w-6xl mx-auto"
         initial="hidden"

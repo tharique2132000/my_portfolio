@@ -8,6 +8,7 @@ import Education from "./education/page";
 import Experience from "./experience/page";
 import Skill from "./skills/page";
 import Contact from "./contact/page";
+import Projects from "./projects/page";
 
 export default function Home() {
   const lenisRef = useRef(null);
@@ -51,9 +52,9 @@ export default function Home() {
       <div id="skills">
         <Skill />
       </div>
-      {/* <div id="education">
-        <Education />
-      </div> */}
+      <div id="projects">
+        <Projects />
+      </div>
 
       <div id="contact">
         <Contact />
