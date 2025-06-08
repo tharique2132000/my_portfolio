@@ -37,36 +37,36 @@ export default function About() {
   };
 
   return (
-    <div className="bg-transparent flex flex-col items-center justify-center min-h-screen px-4 py-16">
+    <div className="bg-transparent max-w-6xl flex flex-col items-center justify-center min-h-screen px-4 py-16 ">
       {/* ABOUT ME */}
       <motion.div
         ref={headingRef}
-        className="w-full max-w-4xl mx-auto text-center mb-16"
-        initial={{ opacity: 0, y: -20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        className="w-full mx-auto text-center mb-16"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.2, delay: 0.2 }}
       >
         <motion.h1
           className="text-4xl md:text-5xl font-bold mb-4 text-foreground"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.4 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.2, delay: 0.4 }}
         >
           Who Am I ?
         </motion.h1>
         <motion.p
           className="text-lg text-muted-foreground max-w-2xl mx-auto"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.2, delay: 0.6 }}
         >
           A brief intro about myself
         </motion.p>
         <motion.div
           className="w-24 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto mt-6 rounded-full"
-          initial={{ width: 0 }}
-          animate={isInView ? { width: 96 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
+            initial={{ width: 0 }}
+            whileInView={{ width: 96 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         ></motion.div>
       </motion.div>
 
@@ -79,8 +79,8 @@ export default function About() {
       >
         <motion.p
           className="text-center md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
+          //   initial={{ opacity: 0 }}
+          // whileInView={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.0 }}
         >
           I'm a code-slinging Full-Stack Developer from India who speaks fluent

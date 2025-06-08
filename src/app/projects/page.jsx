@@ -6,69 +6,75 @@ import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "../../components/ui/card";
 import { Github, ExternalLink, Star, Filter } from "lucide-react";
+import svnstr from '../../assets/svnstrimg.png'
+import logistics from '../../assets/logistics.jpeg'
+import medical from '../../assets/medical.jpeg'
+import masculino from '../../assets/masculino.png'
+import interview from '../../assets/interviewscreening.png'
 
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "A full-featured e-commerce solution with cart, payment integration, and admin dashboard.",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+    title: "Logistics Aid Platform",
+    description:
+      "An end-to-end logistics and e-commerce platform with features like inventory management, cart system, and a secure admin dashboard for order tracking and analytics.",
+    technologies: ["React", "Javascript", "MySQL", "Java"],
     category: "fullstack",
     github: "https://github.com",
     live: "https://example.com",
+    img:logistics,
     featured: true,
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "Kanban-style task manager with drag-and-drop functionality and real-time updates.",
-    technologies: ["Next.js", "Firebase", "Tailwind CSS", "DnD"],
+    title: "Medical Analysis Application",
+    description:
+      "A medical data management tool with a Kanban-style UI for organizing reports and tasks, featuring real-time collaboration, drag-and-drop functionality, and Firebase backend integration.",
+    technologies: ["React", "Javascript", "MySQL", "Java"],
     category: "frontend",
     github: "https://github.com",
     live: "https://example.com",
+        img:medical,
     featured: true,
   },
   {
     id: 3,
-    title: "Weather Dashboard",
-    description: "Real-time weather forecasting application with location detection and historical data.",
-    technologies: ["React", "OpenWeather API", "Chart.js"],
+    title: "Interview Screening Application",
+    description:
+      "A responsive web app for conducting and managing candidate interviews, offering real-time screening, question banks, timer-based rounds, and automated result compilation.",
+    technologies: ["React", "Java", "Chart.js","Grafana"], // replace OpenWeather API if unrelated
     category: "frontend",
     github: "https://github.com",
     live: "https://example.com",
+        img:interview,
     featured: false,
   },
   {
     id: 4,
-    title: "Social Media Analytics",
-    description: "Dashboard for tracking social media metrics and generating engagement reports.",
-    technologies: ["Python", "Django", "PostgreSQL", "Redis"],
+    title: "Website | Masculino Latino",
+    description:
+      "A brand-focused portfolio website built for a men’s fashion line, showcasing products, brand story, and collection galleries, with a clean and responsive design.",
+    technologies: ["React", "Javascript", "Shopify"],
     category: "backend",
     github: "https://github.com",
     live: "https://example.com",
+        img:masculino,
     featured: false,
   },
   {
     id: 5,
-    title: "Fitness Tracker",
-    description: "Mobile-first fitness application with workout plans, progress tracking, and community features.",
-    technologies: ["Flutter", "Firebase", "Google Fit API"],
-    category: "mobile",
+    title: "Website | Seven Star Elevators",
+    description:
+      "A corporate website for a vacuum elevator company, featuring product showcases, service details, and a contact interface built for conversions and SEO optimization.",
+    technologies: ["Next.js", "PocketBase", "Email.js"],
+    category: "backend",
     github: "https://github.com",
     live: "https://example.com",
-    featured: true,
-  },
-  {
-    id: 6,
-    title: "AI Content Generator",
-    description: "AI-powered content creation tool with customizable templates and tone settings.",
-    technologies: ["Next.js", "OpenAI API", "Tailwind CSS"],
-    category: "fullstack",
-    github: "https://github.com",
-    live: "https://example.com",
+        img:svnstr,
     featured: false,
   },
 ];
+
 
 const categories = ["all", "frontend", "backend", "fullstack", "mobile"];
 
@@ -87,7 +93,7 @@ export default function Projects() {
   };
 
   return (
-    <div ref={ref} className="min-h-screen py-20 px-4 bg-gradient-to-br from-background ">
+    <div ref={ref} className="min-h-screen  my-10 px-4 bg-gradient-to-br from-background  max-w-6xl">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -166,8 +172,9 @@ export default function Projects() {
                 <div className="relative h-48 overflow-hidden">
                   <div className="bg-gradient-to-br bg-primary w-full h-full flex items-center justify-center">
                     {/* <div className="bg-gray-300 border-2 border-dashed rounded-xl w-16 h-16" /> */}
+                  <img src={project.img.src} alt={project.title} className="object-cover w-full h-full" />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-90"></div>
+                  {/* <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-90"></div> */}
                 </div>
                 
                 <CardHeader>
@@ -175,7 +182,7 @@ export default function Projects() {
                 </CardHeader>
                 
                 <CardContent className="flex-grow">
-                  <p className="text-muted-foreground mb-4">{project.description}</p>
+                  <p className="text-sm text-muted-foreground mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, idx) => (
                       <Badge 
@@ -189,7 +196,7 @@ export default function Projects() {
                   </div>
                 </CardContent>
                 
-                <CardFooter className="flex justify-between pt-4">
+                {/* <CardFooter className="flex justify-between pt-4">
                   <Button variant="outline" asChild>
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <Github className="mr-2 h-4 w-4" /> Code
@@ -200,7 +207,7 @@ export default function Projects() {
                       <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
                     </a>
                   </Button>
-                </CardFooter>
+                </CardFooter> */}
               </Card>
             </motion.div>
           ))}

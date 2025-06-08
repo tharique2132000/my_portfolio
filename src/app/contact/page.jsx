@@ -5,13 +5,15 @@ import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
 import { Textarea } from "../../components/ui/textarea";
 import { Card, CardContent } from "../../components/ui/card";
+import { Toaster, toast } from "sonner"; // ← Sonner toast here
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { motion, useInView } from "framer-motion";
-import { Mail, Phone, MapPin, Send, ArrowLeft } from "lucide-react";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
 
+// Schema
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email"),
@@ -26,19 +28,21 @@ export default function ContactForm() {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({ resolver: zodResolver(contactSchema) });
 
   const onSubmit = (data) => {
     console.log("Form Submitted", data);
-    alert("Message Sent Successfully!");
+
+    // Simulate sending
+    toast.success("Message sent successfully!", {
+      description: "Thanks for reaching out. I'll get back to you soon!",
+    });
+
+    reset(); // reset form
   };
 
-  const icons = [
-    <Instagram />,
-    <Facebook />,
-    <Twitter />,
-    <Linkedin/>
-  ]
+  const icons = [<Instagram />, <Facebook />, <Twitter />, <Linkedin />];
 
   const contactInfo = [
     {
@@ -62,7 +66,9 @@ export default function ContactForm() {
   ];
 
   return (
-    <div ref={ref} className="flex flex-col items-center justify-center max-w-4xl py-20">
+    <div ref={ref} className="flex flex-col items-center justify-center max-w-6xl mt-40 px-4">
+      <Toaster richColors position="top-center" /> {/* Sonner Toaster */}
+
       <motion.div
         className="w-full max-w-6xl mx-auto text-center mb-16"
         initial={{ opacity: 0, y: -20 }}
@@ -95,7 +101,7 @@ export default function ContactForm() {
       </motion.div>
 
       <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-10">
-        {/* Contact Information */}
+        {/* Contact Info */}
         <motion.div
           className="space-y-6"
           initial={{ opacity: 0, x: -30 }}
@@ -141,7 +147,7 @@ export default function ContactForm() {
               Follow Me
             </h4>
             <div className="flex gap-4">
-              {icons.map((_, index) => (
+              {icons.map((icon, index) => (
                 <motion.a
                   key={index}
                   href="#"
@@ -151,21 +157,10 @@ export default function ContactForm() {
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.3, delay: 1.2 + index * 0.1 }}
                 >
-                    {icons[index]}
+                  {icon}
                 </motion.a>
               ))}
             </div>
-            {/* <motion.div
-              className=""
-              animate={{ x: [0, -10, 10, 0], opacity: [1, 0.7, 1] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
-              <ArrowLeft />
-            </motion.div> */}
           </motion.div>
         </motion.div>
 
@@ -184,7 +179,7 @@ export default function ContactForm() {
                     <Input
                       placeholder="Your Name"
                       {...register("name")}
-                      className="bg-background/50 border-border/50 h-14 px-5 rounded-xl focus-visible:ring-primary focus-visible:ring-2 focus-visible:ring-offset-0"
+                      className="bg-background/50 border-border/50 h-14 px-5 rounded-xl focus-visible:ring-primary"
                     />
                     {errors.name && (
                       <p className="text-red-500 text-sm mt-1 ml-1">
@@ -197,7 +192,7 @@ export default function ContactForm() {
                       type="email"
                       placeholder="Your Email"
                       {...register("email")}
-                      className="bg-background/50 border-border/50 h-14 px-5 rounded-xl focus-visible:ring-primary focus-visible:ring-2 focus-visible:ring-offset-0"
+                      className="bg-background/50 border-border/50 h-14 px-5 rounded-xl focus-visible:ring-primary"
                     />
                     {errors.email && (
                       <p className="text-red-500 text-sm mt-1 ml-1">
@@ -210,7 +205,7 @@ export default function ContactForm() {
                 <div>
                   <Input
                     placeholder="Subject"
-                    className="bg-background/50 border-border/50 h-14 px-5 rounded-xl focus-visible:ring-primary focus-visible:ring-2 focus-visible:ring-offset-0"
+                    className="bg-background/50 border-border/50 h-14 px-5 rounded-xl focus-visible:ring-primary"
                   />
                 </div>
 
@@ -218,7 +213,7 @@ export default function ContactForm() {
                   <Textarea
                     placeholder="Your Message"
                     {...register("message")}
-                    className="bg-background/50 border-border/50 min-h-32 px-5 py-4 rounded-xl focus-visible:ring-primary focus-visible:ring-2 focus-visible:ring-offset-0"
+                    className="bg-background/50 border-border/50 min-h-32 px-5 py-4 rounded-xl focus-visible:ring-primary"
                   />
                   {errors.message && (
                     <p className="text-red-500 text-sm mt-1 ml-1">
@@ -227,10 +222,7 @@ export default function ContactForm() {
                   )}
                 </div>
 
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
+                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                   <Button
                     type="submit"
                     className="w-full py-6 text-lg bg-gradient-to-r from-primary to-purple-500 hover:from-primary/90 hover:to-purple-500/90 transition-all rounded-xl shadow-lg"

@@ -91,38 +91,38 @@ export default function Experience() {
   return (
     <div
       ref={sectionRef}
-      className="flex flex-col items-center justify-center "
+      className="flex flex-col items-center justify  my-20 "
     >
       <motion.div
         ref={headingRef}
         className="w-full max-w-6xl mx-auto text-center mb-16"
-        initial={{ opacity: 0, y: -20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.2, delay: 0.2 }}
       >
         <motion.h2
           className="text-4xl md:text-5xl font-bold mb-4 text-foreground"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.4 }}
+            initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.2, delay: 0.2 }}
         >
           My Experience
         </motion.h2>
         <motion.p
           className="text-lg text-muted-foreground max-w-2xl mx-auto font-thin"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
+            initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.2, delay: 0.2 }}
         >
           A journey through my roles, responsibilities, and technologies I've
           mastered.
         </motion.p>
         <motion.div
           className="w-24 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto mt-6 rounded-full"
-          initial={{ width: 0 }}
-          animate={isInView ? { width: 96 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        ></motion.div>
+            initial={{ width: 0 }}
+          whileInView={{ width: 96 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        />
       </motion.div>
 
       <div className="relative w-full flex flex-col max-w-4xl">
@@ -134,7 +134,7 @@ export default function Experience() {
             viewport={{ once: true, amount: 0.3 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="space-y-6 p-5 isolate aspect-video "
+            className="space-y-6 p-5 isolate"
           >
             <div>
               {index !== 0 && (
@@ -142,7 +142,7 @@ export default function Experience() {
               )}
               <p className="text-sm text-muted-foreground">{item.year}</p>
               <h3 className="text-2xl font-bold text-primary">{item.title}</h3>
-              <p className="text-blue-600 font-medium hover:underline">
+              <p className="text-yellow-500 font-medium hover:underline">
                 {item.company}
               </p>
               <p className="mt-2 text-sm text-muted-foreground">
@@ -176,7 +176,7 @@ export default function Experience() {
               </ul>
             </div>
 
-            <div>
+            {/* <div>
               <h4 className="text-sm font-semibold text-purple-700 mb-2">
                 Technologies & Skills
               </h4>
@@ -191,7 +191,7 @@ export default function Experience() {
                   </Badge>
                 ))}
               </div>
-            </div>
+            </div> */}
           </motion.div>
         ))}
       </div>

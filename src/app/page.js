@@ -55,7 +55,6 @@ export default function Home() {
       <div id="projects">
         <Projects />
       </div>
-
       <div id="contact">
         <Contact />
       </div>

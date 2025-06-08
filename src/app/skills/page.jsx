@@ -9,41 +9,53 @@ import { motion } from "framer-motion";
 import {
   SiNodedotjs, SiPython, SiExpress, SiDjango, SiGraphql, SiSocketdotio,
   SiReact, SiNextdotjs, SiTypescript, SiJavascript, SiTailwindcss, SiFlutter,
-  SiPostgresql, SiMongodb, SiMysql, SiRedis
+  SiPostgresql, SiMongodb, SiMysql, SiRedis,SiWordpress,SiWix,SiFramer,SiPocketbase,SiFirebase,SiSqlite,SiFigma
 } from "react-icons/si";
 
 const techStack = [
+  // {
+  //   category: "Programing Languages",
+  //   items: [
+  //     { name: "Express", level: "Expert", exp: "3 years", icon: <SiExpress className="w-8 h-8" /> },
+  //     { name: "Django", level: "Intermediate", exp: "2 years", icon: <SiDjango className="w-8 h-8" /> },
+  //     { name: "GraphQL", level: "Intermediate", exp: "2 years", icon: <SiGraphql className="w-8 h-8" /> },
+  //     { name: "Socket.io", level: "Intermediate", exp: "2 years", icon: <SiSocketdotio className="w-8 h-8" /> },
+  //   ],
+  // },
   {
-    category: "Backend",
+    category: "Programing Languages & Frameworks",
     items: [
-      { name: "Node.js", level: "Expert", exp: "4 years", icon: <SiNodedotjs className="w-8 h-8" /> },
-      { name: "Python", level: "Expert", exp: "5 years", icon: <SiPython className="w-8 h-8" /> },
-      { name: "Express", level: "Expert", exp: "3 years", icon: <SiExpress className="w-8 h-8" /> },
-      { name: "Django", level: "Intermediate", exp: "2 years", icon: <SiDjango className="w-8 h-8" /> },
-      { name: "GraphQL", level: "Intermediate", exp: "2 years", icon: <SiGraphql className="w-8 h-8" /> },
-      { name: "Socket.io", level: "Intermediate", exp: "2 years", icon: <SiSocketdotio className="w-8 h-8" /> },
+      { name: "React", level: "Expert", exp: "3 years", icon: <SiReact className="w-8 h-8" /> },
+      { name: "Python", level: "Expert", exp: "2 years", icon: <SiPython className="w-8 h-8" /> },
+      { name: "Node.js", level: "Expert", exp: "3 years", icon: <SiNodedotjs className="w-8 h-8" /> },
+      { name: "Next.js", level: "Expert", exp: "2 years", icon: <SiNextdotjs className="w-8 h-8" /> },
+      { name: "TypeScript", level: "Expert", exp: "3 years", icon: <SiTypescript className="w-8 h-8" /> },
+      { name: "JavaScript", level: "Expert", exp: "3 years", icon: <SiJavascript className="w-8 h-8" /> },
+      { name: "Tailwind", level: "Expert", exp: "3 years", icon: <SiTailwindcss className="w-8 h-8" /> },
+      { name: "Flutter", level: "Intermediate", exp: "1 year", icon: <SiFlutter className="w-8 h-8" /> },
+      { name: "SQL", level: "Expert", exp: "3 years", icon: <SiMysql className="w-8 h-8" /> },
     ],
   },
-  {
-    category: "Frontend",
+    {
+    category: "Tools",
     items: [
-      { name: "React", level: "Expert", exp: "4 years", icon: <SiReact className="w-8 h-8" /> },
-      { name: "Next.js", level: "Expert", exp: "3 years", icon: <SiNextdotjs className="w-8 h-8" /> },
-      { name: "TypeScript", level: "Expert", exp: "4 years", icon: <SiTypescript className="w-8 h-8" /> },
-      { name: "JavaScript", level: "Expert", exp: "5 years", icon: <SiJavascript className="w-8 h-8" /> },
-      { name: "Tailwind CSS", level: "Expert", exp: "3 years", icon: <SiTailwindcss className="w-8 h-8" /> },
-      { name: "Flutter", level: "Intermediate", exp: "2 years", icon: <SiFlutter className="w-8 h-8" /> },
+      { name: "WordPress", level: "Expert", exp: "4 years", icon: <SiWordpress className="w-8 h-8" /> },
+      { name: "Wix", level: "Expert", exp: "4 years", icon: <SiWix className="w-8 h-8" /> },
+      { name: "Framer", level: "Expert", exp: "2 years", icon: <SiFramer className="w-8 h-8" /> },
+      { name: "PocketBase", level: "Expert", exp: "3 years", icon: <SiPocketbase className="w-8 h-8" /> },
+      { name: "Firebase", level: "Expert", exp: "3 years", icon: <SiFirebase className="w-8 h-8" /> },
+      { name: "Figma", level: "Expert", exp: "3 years", icon: <SiFigma className="w-8 h-8" /> },
     ],
   },
-  {
-    category: "Database",
-    items: [
-      { name: "PostgreSQL", level: "Expert", exp: "3 years", icon: <SiPostgresql className="w-8 h-8" /> },
-      { name: "MongoDB", level: "Expert", exp: "3 years", icon: <SiMongodb className="w-8 h-8" /> },
-      { name: "MySQL", level: "Expert", exp: "3 years", icon: <SiMysql className="w-8 h-8" /> },
-      { name: "Redis", level: "Intermediate", exp: "2 years", icon: <SiRedis className="w-8 h-8" /> },
-    ],
-  },
+  // {
+  //   category: "Database",
+  //   items: [
+  //     { name: "PostgreSQL", level: "Expert", exp: "3 years", icon: <SiPostgresql className="w-8 h-8" /> },
+  //     { name: "MongoDB", level: "Expert", exp: "3 years", icon: <SiMongodb className="w-8 h-8" /> },
+  //     { name: "MySQL", level: "Expert", exp: "3 years", icon: <SiMysql className="w-8 h-8" /> },
+  //     { name: "Redis", level: "Intermediate", exp: "2 years", icon: <SiRedis className="w-8 h-8" /> },
+  //   ],
+  // },
 ];
 
 const levelColor = {
@@ -73,9 +85,9 @@ const fadeIn = {
   }),
 };
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen px-4 py-20 max-w-4xl">
+    <section className="flex flex-col items-center justify-center min-h-screen px-4 py-20 max-w-6xl my-20">
       <motion.div
-        className="max-w-6xl mx-auto"
+        className=""
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -84,13 +96,13 @@ const fadeIn = {
           className="text-center mb-16"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
         >
           <motion.h1
             className="text-4xl md:text-5xl font-bold mb-4 text-foreground"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
           >
             Technology Stack
           </motion.h1>
@@ -98,7 +110,7 @@ const fadeIn = {
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
           >
             Technologies I use to bring ideas to life
           </motion.p>
@@ -106,7 +118,7 @@ const fadeIn = {
             className="w-24 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto mt-6 rounded-full"
             initial={{ width: 0 }}
             whileInView={{ width: 96 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
           />
         </motion.div>
 
@@ -122,7 +134,7 @@ const fadeIn = {
               {stack.items.map((tech, idx) => (
                 <motion.div
                   key={idx}
-                  className="bg-card/80 backdrop-blur-lg border border-border rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                  className="bg-card/90 backdrop-blur-lg border border-border rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                   custom={idx}
                   variants={fadeIn}
                 >
@@ -131,7 +143,7 @@ const fadeIn = {
                       {tech.icon}
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-foreground">
+                      <h3 className="text-l font-bold text-foreground">
                         {tech.name}
                       </h3>
                       <p className="text-muted-foreground text-sm">
@@ -154,7 +166,8 @@ const fadeIn = {
           </motion.div>
         ))}
 
-        <motion.div className="mb-20" variants={fadeIn}>
+        {/* NOT NEEDE FOR NOW */}
+        {/* <motion.div className="mb-20" variants={fadeIn}>
           <div className="flex items-center gap-4 mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground">
               Additional Technologies
@@ -175,7 +188,8 @@ const fadeIn = {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
+
       </motion.div>
     </section>
   );

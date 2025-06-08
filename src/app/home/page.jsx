@@ -24,7 +24,9 @@ export default function Home() {
   };
 
   return (
-    <div className=" bg-transparent  flex px-4 py-16 flex-col items-center justify-center p-6 sm:p-12 md:p-24 relative md:mb-32">
+    // <div className=" bg-transparent  flex px-4 py-16 flex-col items-center justify-center p-6 md:my-80 sm:p-12 md:p-24 relative md:mb-32">
+<div className="bg-transparent flex px-4 py-16 flex-col items-center justify-center p-6 my-[200px] sm:my-[200px] md:my-80 sm:p-12 md:p-24 relative md:mb-32">
+      
       <motion.div
         className="flex flex-col space-y-4 text-center sm:text-left mb-20"
         initial={{ opacity: 0, y: 50 }}
@@ -70,7 +72,6 @@ export default function Home() {
           onClick={handleScrollDown}
         >
           <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
-
         </motion.div>
       )}
     </div>
